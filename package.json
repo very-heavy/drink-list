@@ -1,12 +1,13 @@
 {
-  "name": "drink-list",
+  "name": "drink-share",
   "version": "1.0.0",
   "description": "飲料情報共有サイト",
   "main": "index.js",
   "scripts": {
     "lint": "eslint",
     "test": "jest",
-    "start": "node ./src/server.js"
+    "start": "node ./src/server.js",
+    "commit": "git-cz"
   },
   "repository": {
     "type": "git",
