@@ -1,0 +1,51 @@
+{
+  "name": "drink-list",
+  "version": "1.0.0",
+  "description": "飲料情報共有サイト",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint",
+    "test": "jest",
+    "start": "node ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/very-heavy/drink-list.git"
+  },
+  "keywords": [],
+  "author": "very-heavy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/very-heavy/drink-list/issues"
+  },
+  "homepage": "https://github.com/very-heavy/drink-list#readme",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "husky": "^3.0.4",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.2.3"
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.18",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "express": "^4.17.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "npm run lint"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
