@@ -1,17 +1,7 @@
-//投稿するための
+// 投稿するための
+const shareRepository = require('../infrastructure/share-repository');
 
-function share({drink_name, drink_price, drink_place, drink_rate, drink_category, drink_memo}){
-
-    const drink = {
-        name: drink_name,
-        price: drink_price,
-        place: drink_place,
-        rate: drink_rate,
-        category: drink_category,
-        memo: drink_memo,
-    };
-
-    const err_infra = infrastructure.post(drink)
-
-    return err_infra
-}
+module.exports.share = async (drink) => {
+  const isSuccess = await shareRepository.post(drink);
+  return isSuccess;
+};
