@@ -4,7 +4,7 @@ const route = require('./route/router');
 const app = express();
 
 app.use((req, res, next) => {
-  res.header('Access-Controll-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', '*');
   next();
 });
 
