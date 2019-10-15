@@ -25,4 +25,23 @@ async function select_all_drink() {
   }
 }
 
+async function post_drink(name, price, place, rate, category, memo) {
+  const pool = mysql.createPool({
+    connectionLimit: 10,
+    host: 'localhost',
+    user: 'root',
+    database: 'drink_share',
+  });
+
+  pool.query = util.promisify(pool.query);
+  try {
+    const results = await pool.query(`INSERT into drinks (name, price, place, rate, category, memo) VALUES ('${name}', ${price}, '${place}', ${rate}, '${category}', '${memo}')`);
+    pool.end();
+    return results;
+  } catch (err) {
+    throw new Error(err);
+  }
+}
+
 module.exports.select_all_drink = select_all_drink;
+module.exports.post_drink = post_drink;
