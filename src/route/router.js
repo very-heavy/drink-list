@@ -6,6 +6,6 @@ const controll = require('../controller/controll'); // controll.jsを呼び込�
 
 // ルーティングしてるだけ、controllとエンドポイントをつなぐ
 router.get('/drinks', controll.show_drink_list);
-router.get('/post', controll.post_drink);
+router.post('/drinks', controll.post_drink);
 
 module.exports = router;
