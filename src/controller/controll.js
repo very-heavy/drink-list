@@ -10,12 +10,14 @@ exports.show_drink_list = async function (req, res) {
 };
 
 exports.post_drink = async function (req, res) {
-  const { name } = req.name;
-  const { price } = req.price;
-  const { place } = req.place;
-  const { rate } = req.rate;
-  const { category } = req.category;
-  const { memo } = req.memo;
+  const {
+    name,
+    price,
+    place,
+    rate,
+    category,
+    memo,
+  } = req.body;
   const { post_drink } = await infra.post_drink(name, price, place, rate, category, memo);
-  res.send({ post_drink });
+  res.send(post_drink);
 };
